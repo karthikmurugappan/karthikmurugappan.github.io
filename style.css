@@ -1,11 +1,20 @@
 .header{
-	background-color: #2b4585;
 	display:flex;
 	justify-content: space-around;
+	background-color: #2b4585;
 	color: #f0ebb2;
+	padding: 15px;
 }
-.vertical-space{
-	padding-bottom: 1px;
+.vertical-space1{
+	padding-bottom: 15px;
+	background-color: #FFE5B5;
+}
+.vertical-space2{
+	padding-bottom: 150px;
+	background-color: #FFE5B5;
+}
+.space{
+	padding: 15px;
 }
 .wrapper{
 	background-color: #FFE5B5;
@@ -13,59 +22,54 @@
 	flex-direction: column;
 	align-items: center;
 }
-.caption-div{
-	display: flex;
-	align-items: left;
-	justify-content: center;
-}
 .container{
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	border: 1px solid black;
+	max-width: 960px;
+	margin: 0 auto;
+}
+.image{
+	border-style: solid;
+	border-width: 1px;
 	border-radius: 4px;
 }
-.container-div{
+.caption{
+	background-color:  #FFC3B8;
+	border-style: dotted;
+	padding: 15px;
+}
+.one{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	flex:0 1 auto;
+	column-width: 100px;
+	padding: 3%;
+	flex: 33.33%;
+	align-items: center;
+	width: 700px;
+}
+.two{
+	padding: 3%;
+	flex: 66.66%;
+	background-color: #FFC3B8;
+	border-style: dotted;
 }
 
-.information{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	flex: 1 2 auto;
-}
-.information-div{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap-reverse;
-	justify-content: center;
-	background-color: #FFC3B8;
-	border: 1px solid black;
-	padding: 50px;
-}
 .job-title{
 	font-family: 'Comfortaa';
 }
 .job-description{
 	font-family: 'Coda';
 }
-.total{
-	background-color: red;
-}
+
 @media screen and (max-width: 1000px) {
   .container {
     flex-direction: column;
   }
-  .container-div {
+  .one {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .container {
+  .one img {
     margin-bottom: 15px;
   }
 }
