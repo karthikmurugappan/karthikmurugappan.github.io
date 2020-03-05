@@ -20,15 +20,43 @@
             cronut glossier pork belly tacos poke next level fanny pack vegan
             jianbing lo-fi.
           </p>
+
         </div>
         <div class="footer"></div>
       </div>
     </div>
     <script>
-      function clickMe() {
+	function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
-      }
-    </script>
-  </body>
+
+		const headerContent = document.querySelector(".header");
+
+		let first_name = "Karthikeyan";
+		let last_name = "Murugappan";
+		let first_last_name = "Karthikeyan Murugappan";
+
+		headerContent.textContent = first_name + "'s Lab 4"
+
+		content.innerHTML += "<p class =\"para1\"></p><p class=\"para2\"></p>";
+
+		const para_1 = document.getElementsByClassName("para1");
+		const para_2 = document.getElementsByClassName("para2");
+
+		let third_letter = first_name.charAt(2);
+
+		para_1[0].innerHTML += "My name has " + first_name.length + " characters."
+		para_2[0].innerHTML += "The third character in my name is " + third_letter.toUpperCase();
+
+		para_2[0].innerHTML += "<br>" + "The last three letters of my name are " + last_name.slice(last_name.length - 3) + "<br>";
+	
+		const k = first_last_name.substring(0,5);
+		const m = first_last_name.substring(6,first_last_name.length);
+
+		let total = k.length + m.length;
+
+		headerContent.textContent = first_last_name + "'s Lab 4 " + total;
+	}
+	</script>
+ </body>
 </html>
