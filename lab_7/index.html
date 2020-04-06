@@ -28,6 +28,37 @@
     </div>
     <script>
         /* Your lab code can go here, or in an external file you include */
+        var map = document.createElement("div");
+        var content = document.querySelector(".content");
+        map.id = "map";
+        
+        content.appendChild(map);
+        map.style = "width: 640px; height: 480px;";
+        
+        var area = L.map("map").setView([38.9888, -76.9411], 15);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 40,
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: 'pk.eyJ1Ijoia211cnUiLCJhIjoiY2s4bmlnMWo2MHY2ajNsbDNpOXVpbmxhYiJ9.ckDRsUdSjRhsTYNkmTNimw'
+        }).addTo(area);
+
+        var epp = L.marker([38.993773, -76.945139]).addTo(area);
+        epp.bindPopup("<b>Eppley Recreation Center</b>");
+
+        let array = [
+        [38.980544, -76.937981],
+        [38.991982, -76.933426],
+        [38.979746, -76.93784]
+      ];
+
+		L.marker([array[0][0], array[0][1]]).addTo(area).bindPopup("JASON'S DELI");
+		L.marker([array[1][0], array[1][1]]).addTo(area).bindPopup("VIGILANTE COFFEE");
+        L.marker([array[2][0], array[2][1]]).addTo(area).bindPopup("PHO THOM RESTAURANT")
+
     </script>
   </body>
 </html>
